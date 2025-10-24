@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
                     <ul className="mt-4 space-y-2 text-sm text-[#C0C7CF]">
                         <li>Austin, TX</li>
                         <li>
-                            <a href="mailto:brettpascall@lonestarintelligence.com" className="hover:text-white transition-colors">
-                                brettpascall@lonestarintelligence.com
+                            <a href="mailto:info@lonestarintelligence.com" className="hover:text-white transition-colors break-all">
+                                info@lonestarintelligence.com
                             </a>
                         </li>
                     </ul>
