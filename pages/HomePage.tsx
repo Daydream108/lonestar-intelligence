@@ -112,8 +112,8 @@ const HomePage: React.FC = () => {
              <p className="text-xl md:text-2xl font-medium text-gray-800 italic">
                 “LoneStar Intelligence made AI tangible for our team. Everyone left the session with new ideas—and actual tools we use daily.”
              </p>
-             <p className="mt-6 font-bold text-[#0B1C2E]">Placeholder</p>
-             <p className="text-sm text-gray-500">Texas Business Owner</p>
+             <p className="mt-6 font-bold text-[#0B1C2E]">Michael G.</p>
+             <p className="text-sm text-gray-500">Founder, GrowthCorp</p>
          </div>
       </SectionWrapper>
 

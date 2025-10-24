@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://www.lonestarintelligence.co/</loc>
+    <lastmod>2024-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lonestarintelligence.co/services</loc>
+    <lastmod>2024-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lonestarintelligence.co/how-it-works</loc>
+    <lastmod>2024-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lonestarintelligence.co/about</loc>
+    <lastmod>2024-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lonestarintelligence.co/contact</loc>
+    <lastmod>2024-05-20</lastmod>
   </url>
 </urlset>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
 
@@ -42,19 +43,7 @@ const AboutPage: React.FC = () => {
       <SectionWrapper className="bg-gray-50/70">
         <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
             <div className="md:w-1/3">
-                {/*
-                  HOW TO ADD YOUR IMAGE:
-                  The image is not loading because the file is missing from the project.
-                  1. Add your image named 'brett-pascall.jpg' to the 'public' folder.
-                  2. Once the file is added, uncomment the <img> tag below.
-                  3. Delete the placeholder <div> below.
-                */}
-                {/* <img src="/brett-pascall.jpg" alt="Brett Pascall, Founder & AI Strategist" className="rounded-lg shadow-xl mx-auto w-full max-w-xs object-cover" /> */}
-                
-                {/* Placeholder for the image */}
-                <div className="rounded-lg shadow-xl mx-auto w-full max-w-xs aspect-square bg-gray-200 flex items-center justify-center border border-gray-300">
-                  <p className="text-gray-500 text-center p-4 font-medium">Brett Pascall</p>
-                </div>
+                <img src="/brett-pascall.jpg" alt="Brett Pascall, Founder & AI Strategist" className="rounded-lg shadow-xl mx-auto w-full max-w-xs object-cover" />
             </div>
             <div className="md:w-2/3">
                 <h3 className="text-xl font-semibold text-[#0B1C2E] tracking-wide">Founder & AI Strategist</h3>
