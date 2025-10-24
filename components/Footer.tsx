@@ -1,0 +1,59 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Logo } from './Logo';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-[#0B1C2E] text-white">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-4 space-y-4">
+                <Logo className="h-10 w-auto text-white" />
+                <p className="text-sm text-[#C0C7CF] max-w-xs">
+                    Helping Texas companies integrate AI into their go-to-market strategy and daily operations.
+                </p>
+            </div>
+            <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 className="font-semibold tracking-wider uppercase text-white">Navigation</h3>
+                    <ul className="mt-4 space-y-2">
+                        <li><Link to="/services" className="text-sm text-[#C0C7CF] hover:text-white transition-colors">Services</Link></li>
+                        <li><Link to="/how-it-works" className="text-sm text-[#C0C7CF] hover:text-white transition-colors">How It Works</Link></li>
+                        <li><Link to="/about" className="text-sm text-[#C0C7CF] hover:text-white transition-colors">About</Link></li>
+                        <li><Link to="/contact" className="text-sm text-[#C0C7CF] hover:text-white transition-colors">Contact</Link></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="font-semibold tracking-wider uppercase text-white">Contact</h3>
+                    <ul className="mt-4 space-y-2 text-sm text-[#C0C7CF]">
+                        <li>Austin, TX</li>
+                        <li>
+                            <a href="mailto:hello@lonestarintelligence.io" className="hover:text-white transition-colors">
+                                hello@lonestarintelligence.io
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 className="font-semibold tracking-wider uppercase text-white">Connect</h3>
+                    <div className="mt-4 flex space-x-4">
+                        {/* Placeholder Social Icons */}
+                        <a href="#" className="text-[#C0C7CF] hover:text-white transition-colors" aria-label="LinkedIn">
+                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="#" className="text-[#C0C7CF] hover:text-white transition-colors" aria-label="YouTube">
+                           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" ><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-[#C0C7CF]">
+          <p>&copy; {new Date().getFullYear() + 1} LoneStar Intelligence. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
