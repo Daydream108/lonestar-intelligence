@@ -12,3 +12,13 @@
     "vite": "latest"
   }
 }
+{
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npx vite build",
+    "preview": "vite preview"
+  }
+}
