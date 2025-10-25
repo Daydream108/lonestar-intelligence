@@ -22,3 +22,24 @@
     "preview": "vite preview"
   }
 }
+{
+  "name": "lonestar-intelligence",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npx vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest"
+  },
+  "dependencies": {
+    "react": "18.x",
+    "react-dom": "18.x"
+  }
+}
