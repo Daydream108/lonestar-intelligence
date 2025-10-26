@@ -12,7 +12,7 @@ import CaseStudiesPage from './pages/CaseStudiesPage';
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-white font-sans">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
       <main className="flex-grow">
           <Routes>

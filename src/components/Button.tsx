@@ -24,7 +24,7 @@ export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', h
 
   if (to) {
     return (
-      <Link to={to} className={finalClasses}>
+      <Link to={to} className={finalClasses} {...props}>
         {children}
       </Link>
     );
