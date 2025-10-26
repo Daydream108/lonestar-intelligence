@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
-import { Button } from '../components/Button';
+// FIX: Changed named import for Button to default import
+import Button from '../components/Button';
 
 interface ServiceDetailProps {
   title: string;

@@ -1,8 +1,10 @@
 
+
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { Button } from './Button';
+// FIX: Changed named import for Button to default import
+import Button from './Button';
 
 const navLinks = [
   { name: 'Home', path: '/' },
