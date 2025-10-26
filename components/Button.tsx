@@ -1,46 +1,76 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link, type LinkProps } from "react-router-dom";
+import clsx from "clsx";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'accent';
-  href?: string;
-  to?: string;
-  target?: string;
-  rel?: string;
+// Shared visual props
+type Variant = "primary" | "secondary" | "ghost";
+type BaseProps = {
+  variant?: Variant;
   className?: string;
-}
+  children: React.ReactNode;
+};
 
-export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', href, to, className, ...props }) => {
-  const baseClasses = 'inline-block px-8 py-3 text-sm font-bold rounded-md transition-all duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2';
-  
-  const variantClasses = {
-    primary: 'bg-brand-dark text-white border-2 border-transparent hover:bg-white hover:text-brand-dark hover:border-brand-dark focus:ring-brand-dark',
-    secondary: 'bg-transparent text-brand-dark border-2 border-brand-light hover:bg-gray-100 focus:ring-brand-dark',
-    accent: 'bg-brand-dark text-white border-2 border-transparent hover:bg-white hover:text-brand-dark hover:border-brand-dark focus:ring-brand-dark'
+// BUTTON — renders <button>
+type AsButtonProps = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    to?: undefined;
+    href?: undefined;
   };
 
-  const finalClasses = `${baseClasses} ${variantClasses[variant]} ${className || ''}`;
+// ROUTER LINK — renders <Link> (anchor semantics, no href)
+type AsRouterLinkProps = BaseProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
+    to: LinkProps["to"];
+    href?: undefined;
+  };
 
-  if (to) {
+// PLAIN ANCHOR — renders <a>
+type AsAnchorProps = BaseProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string;
+    to?: undefined;
+  };
+
+export type ButtonProps = AsButtonProps | AsRouterLinkProps | AsAnchorProps;
+
+const baseClasses =
+  "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed";
+
+const variants: Record<Variant, string> = {
+  primary: "bg-black text-white hover:opacity-90 focus-visible:ring-black",
+  secondary:
+    "bg-white text-black border border-neutral-200 hover:bg-neutral-50 focus-visible:ring-neutral-300",
+  ghost: "bg-transparent hover:bg-neutral-100 text-black",
+};
+
+export function Button(props: ButtonProps) {
+  const { children, className, variant = "primary" } = props;
+  const classes = clsx(baseClasses, variants[variant], className);
+
+  if ("to" in props && props.to !== undefined) {
+    const { to, ...linkRest } = props as AsRouterLinkProps;
     return (
-      <Link to={to} className={finalClasses}>
+      <Link to={to} className={classes} {...linkRest}>
         {children}
       </Link>
     );
   }
 
-  if (href) {
+  if ("href" in props && props.href !== undefined) {
+    const { href, ...anchorRest } = props as AsAnchorProps;
     return (
-      <a href={href} className={finalClasses} target={props.target} rel={props.rel}>
+      <a href={href} className={classes} {...anchorRest}>
         {children}
       </a>
     );
   }
 
+  const buttonRest = props as AsButtonProps;
   return (
-    <button className={finalClasses} {...props}>
+    <button className={classes} {...buttonRest}>
       {children}
     </button>
   );
-};
+}
+
+export default Button;

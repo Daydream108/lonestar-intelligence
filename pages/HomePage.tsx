@@ -123,7 +123,7 @@ const HomePage: React.FC = () => {
               <h2 className="text-3xl font-bold">Ready to see AI in action?</h2>
               <div className="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button to="/contact" variant="primary">Book a Consultation</Button>
-                <Button to="/contact" variant="secondary" className="!text-white !border-white hover:!bg-white/10">Contact Us</Button>
+                <Button to="/contact" variant="secondary">Contact Us</Button>
               </div>
           </div>
       </SectionWrapper>
