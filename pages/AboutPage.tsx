@@ -14,9 +14,27 @@ const ValueCard: React.FC<{ title: string; description: string; icon: React.Reac
     );
 }
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Brett Pascall",
+  "jobTitle": "Founder & AI Strategist",
+  "image": "/brett-pascall.jpg",
+  "url": "https://www.lonestarintelligence.co/about",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "LoneStar Intelligence"
+  },
+  "description": "With a background in enterprise relationship management and customer success, Brett brings years of experience helping organizations scale through technology and strategy. He founded LoneStar Intelligence to help Texas businesses unlock the same level of intelligence and efficiency through AI."
+};
+
 const AboutPage: React.FC = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <SectionWrapper className="bg-gray-50/70">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark">Built in Texas. Designed for Texas businesses.</h1>
@@ -43,7 +61,7 @@ const AboutPage: React.FC = () => {
       <SectionWrapper className="bg-gray-50/70">
         <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
             <div className="md:w-1/3">
-                <img src="/brett-pascall.jpg" alt="Brett Pascall, Founder & AI Strategist" className="rounded-lg shadow-xl mx-auto w-full max-w-xs object-cover" />
+                <img src="/brett-pascall.jpg" alt="Brett Pascall, Founder & AI Strategist" className="rounded-lg shadow-xl mx-auto w-full max-w-xs object-cover" loading="lazy" />
             </div>
             <div className="md:w-2/3">
                 <h3 className="text-xl font-semibold text-brand-dark tracking-wide">Founder & AI Strategist</h3>

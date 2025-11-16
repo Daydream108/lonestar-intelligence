@@ -1,4 +1,8 @@
+
+
+
 import React from 'react';
+// Fix: Use a default import for the Button component.
 import Button from '../components/Button';
 import { SectionWrapper } from '../components/SectionWrapper';
 import { Link } from 'react-router-dom';
@@ -114,6 +118,25 @@ const HomePage: React.FC = () => {
              <p className="mt-6 font-bold text-brand-dark">Michael G.</p>
              <p className="text-sm text-gray-500">Founder, GrowthCorp</p>
          </div>
+      </SectionWrapper>
+
+      {/* Monthly AI Report CTA */}
+      <SectionWrapper>
+        <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+              Stay updated with the only AI news that matters for Texas businesses.
+            </h2>
+            <div className="mt-8">
+                <Button 
+                    href="https://lonestar-ai-report.beehiiv.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    variant="primary"
+                >
+                    Join the Monthly AI Report
+                </Button>
+            </div>
+        </div>
       </SectionWrapper>
 
       {/* Final CTA */}

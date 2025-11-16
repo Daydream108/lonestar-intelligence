@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
-import { Button } from '../components/Button';
+import Button from '../components/Button';
 
 interface ProcessStepProps {
   step: string;

@@ -43,7 +43,7 @@ const variants: Record<Variant, string> = {
   ghost: "bg-transparent hover:bg-neutral-100 text-black",
 };
 
-export function Button(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
   const { children, className, variant = "primary" } = props;
   const classes = clsx(baseClasses, variants[variant], className);
 
@@ -72,5 +72,3 @@ export function Button(props: ButtonProps) {
     </button>
   );
 }
-
-export default Button;

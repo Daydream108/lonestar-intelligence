@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { Button } from './Button';
+import Button from './Button';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -40,6 +40,14 @@ const Header: React.FC = () => {
               {link.name}
             </NavLink>
           ))}
+          <a
+            href="https://lonestar-ai-report.beehiiv.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold tracking-wide transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-dark rounded-sm text-gray-600 hover:text-brand-dark hover:underline underline-offset-4"
+          >
+            Monthly AI Report
+          </a>
         </nav>
 
         {/* Right: Button & Hamburger */}
@@ -83,6 +91,15 @@ const Header: React.FC = () => {
                 {link.name}
               </NavLink>
             ))}
+            <a
+              href="https://lonestar-ai-report.beehiiv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-medium text-gray-500 hover:text-brand-dark"
+            >
+              Monthly AI Report
+            </a>
             <NavLink to="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium text-gray-500 hover:text-brand-dark">Contact</NavLink>
              <Button to="/contact" onClick={() => setIsOpen(false)} variant="primary" className="mt-4">
                 Book a Consultation

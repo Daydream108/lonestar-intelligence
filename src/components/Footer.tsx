@@ -22,6 +22,11 @@ const Footer: React.FC = () => {
                         <li><Link to="/case-studies" className="text-sm text-brand-light hover:text-white transition-colors">Case Studies</Link></li>
                         <li><Link to="/about" className="text-sm text-brand-light hover:text-white transition-colors">About</Link></li>
                         <li><Link to="/contact" className="text-sm text-brand-light hover:text-white transition-colors">Contact</Link></li>
+                        <li>
+                            <a href="https://lonestar-ai-report.beehiiv.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-light hover:text-white transition-colors">
+                                Monthly AI Newsletter
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div>

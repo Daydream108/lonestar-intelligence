@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
-import { Button } from '../components/Button';
+import Button from '../components/Button';
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
     return (
@@ -11,9 +11,44 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
     );
 };
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you offer remote or onsite sessions?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer both. We can tailor the delivery format to best suit your team's needs, whether you're in one office or distributed across Texas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can the content be customized for my industry?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Every session is customized to address the unique challenges and opportunities within your industry and business."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How soon can we schedule a session?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically, we can schedule a session within 2–3 weeks, depending on the level of customization required."
+            }
+        }
+    ]
+};
+
 const ContactPage: React.FC = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <SectionWrapper className="text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark">Let's make AI real for your business.</h1>
         <p className="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
