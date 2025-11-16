@@ -1,7 +1,4 @@
-
-
 import React from 'react';
-// FIX: Changed named import for Button to default import
 import Button from '../components/Button';
 import { SectionWrapper } from '../components/SectionWrapper';
 import { Link } from 'react-router-dom';

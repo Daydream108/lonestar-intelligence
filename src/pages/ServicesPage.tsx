@@ -1,6 +1,5 @@
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
-// FIX: Changed named import for Button to default import
 import Button from '../components/Button';
 
 interface ServiceDetailProps {
@@ -9,6 +8,43 @@ interface ServiceDetailProps {
   outcome: string;
   icon: React.ReactNode;
 }
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "Service",
+      "name": "Corporate Leadership AI Summit",
+      "description": "A high-impact session that helps executive teams understand how AI transforms business strategy. We explore how leadership can align on priorities, identify areas of opportunity, and create an actionable AI roadmap that supports long-term growth.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "LoneStar Intelligence"
+      },
+      "areaServed": ["Austin", "Dallas", "Houston", "San Antonio"]
+    },
+    {
+      "@type": "Service",
+      "name": "AI Enablement for GTM Teams",
+      "description": "A hands-on experience designed for marketing, sales, and revenue teams to learn how to integrate AI into their workflows. Participants see—and practice—how to use AI to ideate campaigns, write content, segment audiences, and accelerate execution.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "LoneStar Intelligence"
+      },
+      "areaServed": ["Austin", "Dallas", "Houston", "San Antonio"]
+    },
+    {
+      "@type": "Service",
+      "name": "AI for Everyday Work",
+      "description": "A practical introduction to AI adoption for all employees. We focus on how AI can simplify communication, organization, and creative problem-solving. The result is a more efficient, confident, and empowered workforce.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "LoneStar Intelligence"
+      },
+      "areaServed": ["Austin", "Dallas", "Houston", "San Antonio"]
+    }
+  ]
+};
 
 const ServiceDetail: React.FC<ServiceDetailProps> = ({ title, description, outcome, icon }) => {
     return (
@@ -30,6 +66,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ title, description, outco
 const ServicesPage: React.FC = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <SectionWrapper className="text-center bg-gray-50/70">
         <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark">AI isn’t the future—it’s your competitive edge today.</h1>
         <p className="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
