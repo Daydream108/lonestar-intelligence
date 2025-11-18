@@ -30,9 +30,16 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div>
+                    <h3 className="font-semibold tracking-wider uppercase text-white">Serving Texas</h3>
+                    <ul className="mt-4 space-y-2 text-sm text-brand-light mb-6">
+                        <li>Austin & Central Texas</li>
+                        <li>Dallas / Fort Worth</li>
+                        <li>Houston Metro</li>
+                        <li>San Antonio</li>
+                    </ul>
+
                     <h3 className="font-semibold tracking-wider uppercase text-white">Contact</h3>
                     <ul className="mt-4 space-y-2 text-sm text-brand-light">
-                        <li>Austin, TX</li>
                         <li>
                             <a href="mailto:info@lonestarintelligence.com" className="hover:text-white transition-colors break-all">
                                 info@lonestarintelligence.com

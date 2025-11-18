@@ -31,6 +31,7 @@ const personSchema = {
 const AboutPage: React.FC = () => {
   return (
     <>
+      <meta name="description" content="LoneStar Intelligence, founded by Brett Pascall, helps Texas businesses bridge the gap between AI theory and execution. We provide strategic AI consulting and workshops in Austin, Dallas, Houston, and San Antonio." />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

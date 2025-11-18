@@ -1,8 +1,4 @@
-
-
-
 import React from 'react';
-// Fix: Use a default import for the Button component.
 import Button from '../components/Button';
 import { SectionWrapper } from '../components/SectionWrapper';
 import { Link } from 'react-router-dom';
@@ -20,7 +16,7 @@ const HomePage: React.FC = () => {
             Empowering Texas teams to see and use the power of AI in real time.
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-            We help Texas businesses integrate AI across their go-to-market strategy, empowering leaders to scale smarter, grow faster, and operate sharper.
+            We help businesses across <strong>Austin, Dallas, Houston, and San Antonio</strong> integrate AI into their go-to-market strategy, empowering leaders to scale smarter, grow faster, and operate sharper.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Button to="/contact" variant="primary">Book a Consultation</Button>
@@ -89,18 +85,18 @@ const HomePage: React.FC = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard 
-              title="Corporate Leadership AI Summit"
-              description="An executive-level session designed to inspire alignment and strategic vision."
+              title="AI for Everyday Work"
+              description="A practical session focused on productivity and workflow automation for immediate impact across your entire team."
               linkTo="/services"
             />
-             <ServiceCard 
+            <ServiceCard 
               title="AI Enablement for GTM Teams"
               description="A collaborative workshop for marketing, sales, and revenue teams to integrate AI into campaigns, messaging, and customer engagement."
               linkTo="/services"
             />
-             <ServiceCard 
-              title="AI for Everyday Work"
-              description="A practical session focused on productivity and workflow automation for immediate impact across your entire team."
+            <ServiceCard 
+              title="Corporate Leadership AI Summit"
+              description="An executive-level session designed to inspire alignment and strategic vision."
               linkTo="/services"
             />
         </div>

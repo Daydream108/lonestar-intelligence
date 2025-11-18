@@ -15,8 +15,8 @@ const serviceSchema = {
   "itemListElement": [
     {
       "@type": "Service",
-      "name": "Corporate Leadership AI Summit",
-      "description": "A high-impact session that helps executive teams understand how AI transforms business strategy. We explore how leadership can align on priorities, identify areas of opportunity, and create an actionable AI roadmap that supports long-term growth.",
+      "name": "AI for Everyday Work",
+      "description": "A practical introduction to AI adoption for all employees. We focus on how AI can simplify communication, organization, and creative problem-solving. The result is a more efficient, confident, and empowered workforce.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "LoneStar Intelligence"
@@ -35,8 +35,8 @@ const serviceSchema = {
     },
     {
       "@type": "Service",
-      "name": "AI for Everyday Work",
-      "description": "A practical introduction to AI adoption for all employees. We focus on how AI can simplify communication, organization, and creative problem-solving. The result is a more efficient, confident, and empowered workforce.",
+      "name": "Corporate Leadership AI Summit",
+      "description": "A high-impact session that helps executive teams understand how AI transforms business strategy. We explore how leadership can align on priorities, identify areas of opportunity, and create an actionable AI roadmap that supports long-term growth.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "LoneStar Intelligence"
@@ -73,17 +73,17 @@ const ServicesPage: React.FC = () => {
       <SectionWrapper className="text-center bg-gray-50/70">
         <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark">AI isn’t the future—it’s your competitive edge today.</h1>
         <p className="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
-          LoneStar Intelligence delivers tailored sessions that help businesses understand, adopt, and execute AI strategies that drive measurable results. Our programs are built around clarity, collaboration, and action—so every participant leaves with confidence and capability.
+          LoneStar Intelligence delivers tailored sessions for businesses in <strong>Austin, Dallas, Houston, and San Antonio</strong>. We help you understand, adopt, and execute AI strategies that drive measurable results. Our programs are built around clarity, collaboration, and action—so every participant leaves with confidence and capability.
         </p>
       </SectionWrapper>
 
       <SectionWrapper>
         <div className="max-w-4xl mx-auto space-y-12">
             <ServiceDetail 
-                title="Corporate Leadership AI Summit"
-                description="A high-impact session that helps executive teams understand how AI transforms business strategy. We explore how leadership can align on priorities, identify areas of opportunity, and create an actionable AI roadmap that supports long-term growth."
-                outcome="Clear executive buy-in, a shared understanding of AI’s role, and an inspired vision for what’s possible across the organization."
-                icon={<LeadershipIcon />}
+                title="AI for Everyday Work"
+                description="A practical introduction to AI adoption for all employees. We focus on how AI can simplify communication, organization, and creative problem-solving. The result is a more efficient, confident, and empowered workforce."
+                outcome="Teams adopt AI into their daily routines with ease, improving productivity and reducing friction across departments."
+                icon={<WorkflowIcon />}
             />
 
             <ServiceDetail 
@@ -94,10 +94,10 @@ const ServicesPage: React.FC = () => {
             />
 
             <ServiceDetail 
-                title="AI for Everyday Work"
-                description="A practical introduction to AI adoption for all employees. We focus on how AI can simplify communication, organization, and creative problem-solving. The result is a more efficient, confident, and empowered workforce."
-                outcome="Teams adopt AI into their daily routines with ease, improving productivity and reducing friction across departments."
-                icon={<WorkflowIcon />}
+                title="Corporate Leadership AI Summit"
+                description="A high-impact session that helps executive teams understand how AI transforms business strategy. We explore how leadership can align on priorities, identify areas of opportunity, and create an actionable AI roadmap that supports long-term growth."
+                outcome="Clear executive buy-in, a shared understanding of AI’s role, and an inspired vision for what’s possible across the organization."
+                icon={<LeadershipIcon />}
             />
         </div>
       </SectionWrapper>
