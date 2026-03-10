@@ -1,0 +1,23 @@
+# LoneStar Intelligence — AI Consulting for Texas Businesses
+# https://www.lonestarintelligence.com
+
+## About
+LoneStar Intelligence is an AI consulting firm founded by Brett Pascall, based in Austin, Texas. We deliver hands-on AI training sessions, leadership AI summits, and GTM team enablement workshops to help Texas businesses adopt and scale artificial intelligence.
+
+## Services
+- Corporate Leadership AI Summit: Executive-level AI strategy and alignment session
+- AI Enablement for GTM Teams: Hands-on AI workshop for marketing, sales, and revenue teams
+- AI for Everyday Work: Org-wide AI productivity training for all employees
+
+## Contact
+Email: info@lonestarintelligence.com
+Location: Austin, TX (serving Austin, Dallas, Houston, San Antonio)
+
+## Key Pages
+- Homepage: https://www.lonestarintelligence.com/#/
+- Services: https://www.lonestarintelligence.com/#/services
+- How It Works: https://www.lonestarintelligence.com/#/how-it-works
+- Case Studies: https://www.lonestarintelligence.com/#/case-studies
+- About: https://www.lonestarintelligence.com/#/about
+- Contact: https://www.lonestarintelligence.com/#/contact
+- Monthly AI Report: https://lonestar-ai-report.beehiiv.com/

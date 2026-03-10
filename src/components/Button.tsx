@@ -1,53 +1,51 @@
-import React from "react";
-import { Link, type LinkProps } from "react-router-dom";
-import clsx from "clsx";
+import React from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
+import clsx from 'clsx';
 
-type Variant = "primary" | "secondary" | "ghost";
-type BaseProps = {
-  variant?: Variant;
+type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+
+type ButtonAsButton = {
+  variant?: ButtonVariant;
   className?: string;
   children: React.ReactNode;
-};
+  to?: undefined;
+  href?: undefined;
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'children'>;
 
-// BUTTON — renders <button>
-type AsButtonProps = BaseProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    to?: undefined;
-    href?: undefined;
-  };
+type ButtonAsLink = {
+  variant?: ButtonVariant;
+  className?: string;
+  children: React.ReactNode;
+  to: LinkProps['to'];
+  href?: undefined;
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | 'children' | 'href'>;
 
-// ROUTER LINK — renders <Link> (anchor semantics, no href)
-type AsRouterLinkProps = BaseProps &
-  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
-    to: LinkProps["to"];
-    href?: undefined;
-  };
+type ButtonAsAnchor = {
+  variant?: ButtonVariant;
+  className?: string;
+  children: React.ReactNode;
+  href: string;
+  to?: undefined;
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | 'children'>;
 
-// PLAIN ANCHOR — renders <a>
-type AsAnchorProps = BaseProps &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string;
-    to?: undefined;
-  };
+export type ButtonProps = ButtonAsButton | ButtonAsLink | ButtonAsAnchor;
 
-export type ButtonProps = AsButtonProps | AsRouterLinkProps | AsAnchorProps;
-
-const baseClasses =
-  "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed";
-
-const variants: Record<Variant, string> = {
-  primary: "bg-black text-white hover:opacity-90 focus-visible:ring-black",
-  secondary:
-    "bg-white text-black border border-neutral-200 hover:bg-neutral-50 focus-visible:ring-neutral-300",
-  ghost: "bg-transparent hover:bg-neutral-100 text-black",
+const variantStyles: Record<ButtonVariant, string> = {
+  primary: 'bg-gold text-white hover:brightness-110 shadow-md',
+  secondary: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
+  ghost: 'border border-white text-white hover:bg-white hover:text-navy',
 };
 
 export default function Button(props: ButtonProps) {
-  const { children, className, variant = "primary" } = props;
-  const classes = clsx(baseClasses, variants[variant], className);
+  const { children, className, variant = 'primary' } = props;
+  const classes = clsx(
+    'inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed',
+    variantStyles[variant],
+    className
+  );
 
-  if ("to" in props && props.to !== undefined) {
-    const { to, ...linkRest } = props as AsRouterLinkProps;
+  if ('to' in props && props.to !== undefined) {
+    const { to, variant: _v, className: _c, children: _ch, ...linkRest } = props as ButtonAsLink;
     return (
       <Link to={to} className={classes} {...linkRest}>
         {children}
@@ -55,8 +53,8 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  if ("href" in props && props.href !== undefined) {
-    const { href, ...anchorRest } = props as AsAnchorProps;
+  if ('href' in props && props.href !== undefined) {
+    const { href, variant: _v, className: _c, children: _ch, ...anchorRest } = props as ButtonAsAnchor;
     return (
       <a href={href} className={classes} {...anchorRest}>
         {children}
@@ -64,7 +62,7 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  const buttonRest = props as AsButtonProps;
+  const { variant: _v, className: _c, children: _ch, to: _t, href: _h, ...buttonRest } = props as ButtonAsButton;
   return (
     <button className={classes} {...buttonRest}>
       {children}

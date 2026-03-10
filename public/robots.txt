@@ -1,3 +1,15 @@
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+Sitemap: https://www.lonestarintelligence.com/sitemap.xml
+
+# AI Crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Googlebot
+Allow: /
